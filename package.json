@@ -1,0 +1,27 @@
+{
+  "name": "confluence-html-previewer",
+  "version": "1.0.2",
+  "description": "Confluence user macro that previews a self-contained HTML attachment in a page overlay",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "clean": "rm -rf dist",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindieChai/confluence-html-previewer.git"
+  },
+  "keywords": [
+    "confluence",
+    "html",
+    "preview",
+    "user-macro",
+    "atlassian"
+  ]
+}

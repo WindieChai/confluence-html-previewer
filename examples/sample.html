@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>sample attachment</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #111;
+      color: #7CFFB2;
+      font: 20px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    button {
+      font: inherit;
+      padding: 8px 14px;
+      background: #7CFFB2;
+      color: #111;
+      border: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#bottom">去底部</a>
+    <a href="/login.action">假登录</a>
+  </nav>
+  <h1 id="demo">HTML 附件</h1>
+  <p id="out">脚本尚未运行</p>
+  <button id="btn" type="button">点我</button>
+  <div style="height:1600px"></div>
+  <h1 id="bottom">底部到了</h1>
+  <script>
+    var leaked = false;
+    try {
+      parent.document.title = 'leaked';
+      parent.document.body.dataset.leaked = 'yes';
+      leaked = true;
+    } catch (err) {
+      leaked = false;
+    }
+    document.getElementById('out').textContent = leaked
+      ? '已访问父页面'
+      : '内联脚本已执行，无法访问父页面';
+    document.getElementById('btn').addEventListener('click', function () {
+      document.getElementById('out').textContent = '按钮点击有效';
+    });
+  </script>
+</body>
+</html>

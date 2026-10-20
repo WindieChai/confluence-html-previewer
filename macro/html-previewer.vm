@@ -1,0 +1,29 @@
+## HTML attachment preview for Confluence Server / Data Center 6.9+
+##
+## Admin setup:
+##   1. Management → User Macros → Create User Macro
+##   2. Macro name: confluence-html-previewer
+##   3. Visibility: Visible to all users
+##   4. Macro Title: confluence-html-previewer
+##      The macro browser lists and searches this title, not the macro name alone.
+##   5. Categories: pick at least one, for example Development
+##   6. Macro body: Has body
+##   7. Body processing: Rendered
+##   8. Output: HTML
+##   9. Paste this template into the User Macro only (not Custom HTML)
+##  10. Icon URL: the hosted dist/html-previewer.icon.png
+##  11. Custom HTML → At end of the BODY:
+##        <script src=".../html-previewer.init.js"></script>
+##
+## Authors insert one or more HTML attachments in the macro body, as a
+## link or a thumbnail. The view page shows each file on its own row.
+## Do not put <script> tags in this template.
+##
+## @noparams is required. Without @param or @noparams, the macro browser
+## omits the macro.
+
+## @noparams
+
+<div class="confluence-html-previewer" data-state="pending">
+$body
+</div>
